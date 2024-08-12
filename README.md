@@ -1,4 +1,4 @@
-# linked_list
+// # linked_list
 
 
 class Main {
@@ -82,6 +82,22 @@ static Node reverse(){
         return prev;
     }
     
+static void delete_name(int data){
+    Node n =new Node (data);
+    if(head.data==n.data){
+        head=head.next;
+    }
+    else{
+        Node var=head;
+        while(var.next.data!=n.data){
+            System.out.println("==");
+            var=var.next;
+        }
+        var.next=var.next.next;
+
+    }
+}
+    
     public static void main(String[] args) {
         add_last(12);
         add_last(15);
@@ -96,8 +112,11 @@ static Node reverse(){
         // print();
         // delete_element(3);
         // print();
-     Node temp=reverse();
-      print(temp);
+    //  Node temp=reverse();
+    //   print(temp);
+      
+      delete_name(12);
+      print(head);
         
     }
 }
